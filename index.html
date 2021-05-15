@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+ 
+    <title>Wine Club Survey</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Wine Club Survey</h1> <!--User Story #1-->
+
+        <p id="description">Dear customer, please take a few minutes to answer the following survey about your wine consumption, which will help us improve our service.</p> <!--User Story #2-->
+
+        <p id="discount">As a way of saying thank you for your time and effort, a <strong>20% discount</strong> code will be sent to your email when you submit the form. Enjoy!</p>
+    </header>
+
+    <main>
+        <!--FORM-->
+        <form id="survey-form" action="#"><!--User Story #3-->
+
+            <fieldset> <!--/Wine Clubcard-->
+                <legend>Wine Clubcard (optional)</legend>
+
+                <label for="clubcard">Clubcard number:</label>
+                <span id="card">FV-<input type="number" name="clubcard" id="clubcard" placeholder="Clubcard">/UK</span>
+                <br>
+
+                <label for="exp-date">Expiry date</label>
+                <input type="date" name="exp-date" id="exp-date">
+                <br>
+            </fieldset> <!--/Wine Clubcard-->
+
+            <fieldset> <!--Yourself-->
+                <legend>About yourself</legend>
+
+                <label for="name" id="name-label">Full name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your full name" autocomplete="name" required> <!--User Story #4, #10, #11-->
+                <br>
+
+                <label for="email" id="email-label">Email address</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email address" autocomplete="email" required> <!--User Story #5, #6, #10, #11-->
+                <br>
+
+                <label for="dropdown">What is your age?</label>
+                    <select name="age" id="dropdown" required> <!--User Story #12-->
+                        <option disabled selected value="">--Please choose an option--</option>
+                        <option value="18-24">18 - 24 years</option>
+                        <option value="25-34">25 - 34 years</option>
+                        <option value="35-44">35 - 44 years</option>
+                        <option value="45-54">45 - 54 years</option>
+                        <option value="55+">55 or older</option>
+                    </select>
+                <br>
+
+                <div>
+                    <p>What is your gender? (optional)</p> <!--User Story #13-->
+
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                    <br>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                    <br>
+                    <input type="radio" name="gender" id="not-answer" value="not-answer">
+                    <label for="not-answer">Prefer not to answer</label>
+                </div>
+            </fieldset> <!--/Yourself-->
+
+            <fieldset> <!--Consumption-->
+                <legend>Wine consumption</legend>
+
+                <label for="consumption">In your household, how many people consume wine? (including yourself)</label>
+                    <input type="number" name="consumption" id="consumption" min="0" placeholder="Number of people" required>
+
+                <br>
+                
+                <label for="place">Where do you usually drink wine?</label>
+                    <input list="drinking-places" name="place" id="place" placeholder="Please specify" required>
+                        <datalist id="drinking-places">
+                            <option value="At home"></option>
+                            <option value="At family/friends"></option>
+                            <option value="At work"></option>
+                            <option value="Pubs"></option>
+                            <option value="Restaurants"></option>
+                        </datalist>
+            </fieldset><!--/Consumption-->
+
+            <fieldset> <!--Purchase-->
+                <legend>Wine purchase</legend>
+
+                <div>
+                    <p style="margin-top: 0;">Where do you usually buy wine? (multiple choice)</p><!--User Story #14-->
+
+                    <input type="checkbox" name="buying-places" id="supermarkets" value="supermarkets">
+                    <label for="supermarkets">Supermarkets</label>
+                    <br>
+                    <input type="checkbox" name="buying-places" id="wine-shops" value="wine-shops">
+                    <label for="wine-shops">Wine shops</label>
+                    <br>
+                    <input type="checkbox" name="buying-places" id="wine-makers" value="wine-makers">
+                    <label for="wine-makers">Wine makers</label>
+                    <br>
+                    <input type="checkbox" name="buying-places" id="delicatessens" value="delicatessens">
+                    <label for="delicatessens">Delicatessens</label>
+                    <br>
+                    <input type="checkbox" name="buying-places" id="online" value="online">
+                    <label for="online">Online</label>
+                    <br>
+                    <input type="checkbox" name="buying-places" id="restaurants" value="restaurants">
+                    <label for="restaurants">Restaurants</label>
+                    <br>
+                    <input type="checkbox" name="buying-places" id="gift" value="gift">
+                    <label for="gift">I usually receive wine as a gift</label>
+                    <br>
+                    <input type="checkbox" name="buying-places" id="buy-other" value="buy-other">
+                    <label for="buy-other">Other</label>
+                    <input type="text" name="other-places" id="other-places" placeholder="Please specify">
+                </div>
+
+                <div>
+                    <p>How much wine do you buy every month?</p> <!--User Story #13-->
+
+                    <input type="radio" name="buy-monthly" id="1to2bottles" value="1to2bottles" required>
+                    <label for="1to2bottles">1 or 2 bottles</label>
+                    <br>
+                    <input type="radio" name="buy-monthly" id="3to6bottles" value="3to6bottles">
+                    <label for="3to6bottles">3 - 6 bottles</label>
+                    <br>
+                    <input type="radio" name="buy-monthly" id="7to10bottles" value="7to10bottles">
+                    <label for="7to10bottles">7 - 10 bottles</label>
+                    <br>
+                    <input type="radio" name="buy-monthly" id="10plus" value="10plus">
+                    <label for="10plus">10+ bottles</label>
+                </div>
+            </fieldset> <!--/Purchase-->
+
+            <fieldset> <!--Satisfaction-->
+                <legend>Satisfaction with our service</legend>
+
+                <label for="number" id="number-label">On a scale of 1 to 10, where 1 is dreadful and 10 is excellent, how would you rate your experience on our website?</label>
+                    <input type="number" name="number" id="number" min="1" max="10" placeholder="Rating" required> <!--User Story #7, #8, #9, #10, #11-->
+                
+                <p>Do you agree or disagree with the following statement? <em>"I would recommend Wine Club."</em></p>
+
+                <table>
+                    <tbody>
+                        <tr class="recommend">
+                            <td><label for="str-desagree">Strongly disagree</label></td>
+                            <td><label for="desagree">Desagree</label></td>
+                            <td><label for="neither">Neither agree or disagree</label></td>
+                            <td><label for="agree">Agree</label></td>
+                            <td><label for="str-agree">Strongly Agree</label></td>
+                        </tr>
+
+                        <tr class="recommend">
+                            <td><input id="str-desagree" name="recommend" type="radio" value="str-desagree" required></td>
+                            <td><input id="desagree" name="recommend" type="radio" value="desagree"></td>
+                            <td><input id="neither" name="recommend" type="radio" value="neither"></td>
+                            <td><input id="agree" name="recommend" type="radio" value="agree"></td>
+                            <td><input id="str-agree" name="recommend" type="radio" value="str-agree"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="final"> <!--User Story #15-->
+                    <label for="comments">Additional comments or suggestions (optional)</label><br>
+                        <textarea name="comments" id="comments" placeholder="Please use this space for additional comments or suggestions"></textarea>
+                </div>
+            </fieldset> <!--/Satisfaction-->
+
+            <div id="sub-button"> <!--User Story #15-->
+                <button type="submit" id="submit">Submit survey and receive your discount code</button>
+            </div>
+        </form>
+    </main>
+
+    <footer id="credits">
+        Created by <a href="https://github.com/FernandaRicciardi" target="_blank" rel="noopener">Fernanda Ricciardi</a>
+    </footer>
+</body>
+</html>

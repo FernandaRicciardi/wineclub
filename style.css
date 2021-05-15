@@ -1,0 +1,264 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    max-width: 1700px;
+    margin: auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 16.5% 1fr 16.5%;
+    font-family: 'Lora', serif;
+    color: rgb(252, 252, 245);
+    font-size: 1.6rem;
+    background-image:
+        linear-gradient(
+        rgb(39, 7, 29), 
+        rgb(65, 44, 71)), 
+        url(assets/back.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+body > * {
+    grid-column: 2;
+    min-width: 0;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+header {
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 2.5rem;
+}
+  
+#title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-shadow: 3px 3px 3px rgba(146, 144, 144, 0.397);
+    padding: 1rem;
+}
+
+fieldset {
+    padding: 3rem 2.5rem 2.5rem;
+    margin: 0px 0px 2.5rem;
+    border-width: 2px;
+    border-style: dotted;
+    border-radius: 10px;
+}
+
+/* fieldset > * {
+  
+} */
+
+input, select, textarea {
+    font-size: 1.4rem;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.877);
+    opacity: 0.9;
+    color: rgb(59, 49, 49);
+    margin-bottom: 1.5rem;
+}
+
+input::placeholder {
+    color: rgb(59, 49, 49);
+    opacity: 1; /* Firefox */
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(59, 49, 49)
+}
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(59, 49, 49);
+}
+
+legend {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+#clubcard {
+    width: 11rem;
+}
+
+#clubcard::-webkit-inner-spin-button,
+#clubcard::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="date"] {
+    height: 16.8px;
+    width: 13rem;
+}
+
+#name, #email {
+    width: 300px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-left: 1rem;
+}
+
+#consumption {
+    width: 130px;
+}
+
+#place {
+    width: 150px;
+}
+
+#number {
+    margin-top: 1rem;
+}
+
+.recommend {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+}
+
+td {
+    border-right: 1px solid rgba(231, 177, 233, 0.582);
+}
+
+td:last-child {
+    border: none
+}
+
+#final {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+#comments {
+    margin-top: 1rem;
+    width: 350px;
+    height: 100px;
+}
+
+button {
+    box-sizing: border-box;
+    background-image: linear-gradient(45deg, rgb(87, 57, 116), purple);
+    font-family: 'Playfair Display', serif;
+    border-radius: 50px;
+    border-style: none;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer;
+    
+}
+button:hover {
+    background-image: linear-gradient(rgb(114, 107, 40), rgb(89, 92, 62));
+    font-weight: bold;
+}
+
+#sub-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#credits {
+    color: rgb(252, 252, 245);
+    font-family: serif;
+    padding: 2rem;
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+#credits a {
+    color: rgb(235, 152, 152);
+}
+
+
+/* grid-template-columns: 16.5% 1fr 16.5%; */
+
+@media screen and (max-width: 800px) {
+    body {
+        grid-template-columns: 10.5% 1fr 10.5%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        grid-template-columns: 3% 1fr 3%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #dropdown,
+    input[type="text"],
+    input[type="email"] {
+        display: block;
+    }
+    #other-places {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #card,
+    #consumption,
+    input[type="date"] {
+        display: block;
+    }
+
+    #card,
+    #clubcard,
+    input[type="date"],
+    #dropdown,
+    #place {
+        width: 50%;
+    }
+
+    .recommend {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        text-align: start;
+    }
+
+    tbody {
+        display: flex;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid rgba(231, 177, 233, 0.582);
+    }
+    
+    td:last-child {
+        border: none
+    }
+}
+
+@media screen and (max-width: 460px) {
+    #name,
+    #email,
+    #dropdown {
+        width: 100%;
+    }
+
+    #comments {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    #other-places,
+    #place,
+    #card {
+        width: 100%;
+    }
+}
