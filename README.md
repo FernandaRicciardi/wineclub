@@ -1,6 +1,6 @@
 :raising_hand: Hiya 
 
-This is the **_Wine Club Survey_**, the second project for the freeCodeCamp **Responsive Web Design Certification (300 hours)**.
+This is the **_[Wine Club Survey](https://fernandaricciardi.github.io/wineclub/)_**, the second project for the freeCodeCamp **Responsive Web Design Certification (300 hours)**.
 
 I tried to use several form elements, like:
 ```
